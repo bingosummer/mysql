@@ -103,15 +103,7 @@ func (cfg *Config) FormatDSN() string {
 			buf.WriteString("?allowCleartextPasswords=true")
 		}
 	}
-
-	if cfg.AllowNativePasswords {
-		if hasParam {
-			buf.WriteString("&allowNativePasswords=true")
-		} else {
-			hasParam = true
-			buf.WriteString("?allowNativePasswords=true")
-		}
-	}
+	buf.WriteString("&allowNativePasswords=true")
 
 	if cfg.AllowOldPasswords {
 		if hasParam {
